@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: sample-spring-webflux-mongo
+
+spring:
+  data:
+    mongodb:
+      database: sample-spring-webflux-mongo
+      port: 27017
+      reactive-repositories:
+        enabled: true
+
+logging:
+  level:
+    root: WARN
+    com:
+      mongodb: WARN
+      springframework:
+        data: WARN
+        web:
+          reactive: DEBUG
+    reactor: WARN

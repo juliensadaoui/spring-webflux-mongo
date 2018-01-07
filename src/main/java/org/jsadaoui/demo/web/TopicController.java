@@ -43,7 +43,7 @@ public class TopicController {
     public Mono<ResponseEntity<Topic>> add(@Valid @RequestBody Topic topic) {
         return userService.getCurrentUser()
                 .flatMap(user -> topicService.newTopic(topic, user))
-                .map(savedTodoList -> new ResponseEntity<>(savedTodoList, HttpStatus.CREATED));
+                .map(savedTopic -> new ResponseEntity<>(savedTopic, HttpStatus.CREATED));
     }
 
     @DeleteMapping("/{topicId}")
